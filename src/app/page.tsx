@@ -1,8 +1,13 @@
+'use client'
+
+import { Switch } from '@/components/Switch'
+import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
-/* eslint-disable react/no-unescaped-entities */
 export default function Home() {
+  const { theme } = useTheme()
+
   return (
     <div>
       <header className="w-full flex items-center justify-between p-4">
@@ -15,21 +20,22 @@ export default function Home() {
             alt="profile icon"
           />
         </a>
-        <nav className="flex gap-4 font-semibold mr-10">
+        <nav className="flex gap-4 text-black dark:text-white font-semibold mr-8">
           <a href="">About</a>
           <a href="">Blog</a>
           <a href="">Projects</a>
+          <Switch />
         </nav>
       </header>
-      <main className="flex flex-col items-center justify-between p-24 mx-[25%]  z-50">
+      <main className="flex flex-col items-center justify-between p-24 mx-[25%] z-50">
         <div className="w-full">
-          <h1 className="text-4xl text-white font-[800] text-left">
+          <h1 className="text-4xl text-black dark:text-white font-[800] text-left">
             Maicon Lourenço
           </h1>
           <br />
         </div>
         <article className="font-medium">
-          <div className="text-zinc-400">
+          <div className=" text-zinc-700 dark:text-zinc-400">
             <p>
               Hi, I'm Maicon, 24, a software developer passionate about this
               wonderful planet and all the things that make it works.
@@ -37,7 +43,7 @@ export default function Home() {
             <p>
               Working at{' '}
               <a
-                className="text-zinc-100"
+                className="text-black dark:text-zinc-100"
                 href="https://webhelp.com/"
                 target="_blank"
                 rel="noopener"
@@ -53,7 +59,7 @@ export default function Home() {
               migrated to 3D modeling, where I worked for approx. 3 years, you
               can check out some of my work on{' '}
               <a href="https://www.artstation.com/maiconloure">
-                <b className="text-white">ArtStation</b>
+                <b className="text-black dark:text-white">ArtStation</b>
               </a>
               , and at the moment I've been focusing my career on software
               development, and I've been studying and working in this area for 4
@@ -82,9 +88,9 @@ export default function Home() {
             <br />
             <p>Find me on</p>
             <br />
-            <p className="flex gap-2">
+            <p className="flex gap-2 font-semibold text-black dark:text-white">
               <a
-                className="flex items-center gap-1 text-white"
+                className="flex items-center gap-1 "
                 href="https://github.com/maiconloure"
                 target="_blank"
                 rel="noopener"
@@ -93,7 +99,7 @@ export default function Home() {
                 GitHub
               </a>
               <a
-                className="flex items-center gap-1 text-white"
+                className="flex items-center gap-1 "
                 href="https://www.linkedin.com/in/maiconlourenco/"
                 target="_blank"
                 rel="noopener"
@@ -106,7 +112,12 @@ export default function Home() {
         </article>
       </main>
       <div className="patterns">
-        <svg width="100%" height="100%" stroke="#6d28d9" stroke-width="2">
+        <svg
+          width="100%"
+          height="100%"
+          className="stroke-zinc-400 dark:stroke-violet-700"
+          strokeWidth="2"
+        >
           <defs>
             <pattern
               id="puzzle"

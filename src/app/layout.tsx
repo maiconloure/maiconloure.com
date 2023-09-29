@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Rubik, Kanit } from 'next/font/google'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' })
@@ -22,11 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head />
+
       <body
-        className={`${inter.variable} ${rubik.variable} ${kanit.variable} bg-slate-950 font-sans text-white`}
+        className={`${inter.variable} ${rubik.variable} ${kanit.variable} font-sans `}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

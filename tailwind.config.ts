@@ -10,8 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'var(--font-inter)',
+        sans: 'var(--font-rubik)',
         inter: 'var(--font-inter)',
+        work: 'var(--font-work)',
         alt: 'var(--font-kanit)',
       },
       backgroundImage: {

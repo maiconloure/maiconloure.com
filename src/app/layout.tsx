@@ -32,20 +32,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={`${inter.variable} ${rubik.variable} ${kanit.variable} ${work.variable} ${space.variable} font-inter`}
+        className={`${inter.variable} ${rubik.variable} ${kanit.variable} ${work.variable} ${space.variable} font-inter `}
       >
         <Providers>
           <header className="w-full flex items-center justify-between p-4">
             <Link href="/">
               <Image
-                className="rounded-full"
-                src="/knight.png"
-                width={60}
-                height={60}
+                className="rounded-full lg:w-14 lg:h-14"
+                src="/profile.svg"
+                width={45}
+                height={45}
                 alt="profile icon"
               />
             </Link>
-            <nav className="flex gap-4 text-zinc-600 dark:text-zinc-300 font-semibold mr-8">
+            <nav className="flex gap-4 text-zinc-600 dark:text-zinc-300 font-semibold mr-4 lg:mr-8">
               <Link
                 className="hover:text-black hover:dark:text-white"
                 href="/about"
@@ -71,12 +71,11 @@ export default function RootLayout({
 
         {children}
 
-        <div className="absolute top-0 left-0 h-[100vh] w-[100vw] z-[-100] opacity-20">
+        <div className="fixed top-0 left-0 h-screen w-screen z-[-100] opacity-25">
           <svg
             width="100%"
             height="100%"
             className="stroke-zinc-400 dark:stroke-violet-700"
-            strokeWidth="2"
           >
             <defs>
               <pattern

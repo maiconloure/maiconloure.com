@@ -23,12 +23,11 @@
 
 @layer base{
   .body {
-      @apply dark:bg-slate-950 bg-white
+      @apply dark:bg-darkBackground bg-white
   }
 }
 
 body {
   --webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* background: radial-gradient(#020617, rgb(13, 17, 23) 94%); */
 }

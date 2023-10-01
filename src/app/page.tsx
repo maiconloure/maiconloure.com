@@ -3,7 +3,7 @@ import { MdEmail } from 'react-icons/md'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-start justify-between p-10 pt-24 mx-[22%] z-50">
+    <main className="flex flex-col items-start justify-between p-10 lg:pt-22 lg:mx-[22%] z-50">
       <div className="w-full">
         <h1 className="text-4xl text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white font-[800]">
           Maicon Lourenço
@@ -11,7 +11,7 @@ export default function Home() {
         <h2 className="text-xl font-semibold">Mid Full Stack Developer</h2>
         <br />
       </div>
-      <article className="font-medium">
+      <article className="w-full font-medium">
         <div className="text-zinc-700 dark:text-zinc-300">
           <p className="hover:text-black dark:hover:text-white">
             Hi, I'm 24 years old, currently living in Brazil.
@@ -54,7 +54,7 @@ export default function Home() {
           </p>
           <br />
           <p>Find me on</p>
-          <p className="flex gap-4 font-semibold text-black dark:text-white">
+          <p className="flex gap-4 font-semibold text-black dark:text-white flex-wrap">
             <span className="flex items-center gap-1 hover:underline hover:text-indigo-500">
               <MdEmail /> maiconloure@gmail.com
             </span>

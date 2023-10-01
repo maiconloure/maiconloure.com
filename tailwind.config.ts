@@ -13,6 +13,7 @@ const config: Config = {
         sans: 'var(--font-rubik)',
         inter: 'var(--font-inter)',
         work: 'var(--font-work)',
+        space: 'var(--font-space)',
         alt: 'var(--font-kanit)',
       },
       backgroundImage: {

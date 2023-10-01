@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.13",
+    "encoding": "^0.1.13",
     "next": "latest",
     "next-themes": "^0.2.1",
+    "notion-to-md": "^3.1.1",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-markdown": "^9.0.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",

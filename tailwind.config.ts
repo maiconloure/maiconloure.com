@@ -22,7 +22,8 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        darkBackground: 'radial-gradient(#020617, rgb(13, 17, 23) 94%)',
+        darkBackground:
+          'linear-gradient(90deg, #3c42d0 21px, transparent 1%) center,linear-gradient(#3c42d0 21px, transparent 1%) center,#797edc;',
       },
     },
   },

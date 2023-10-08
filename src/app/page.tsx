@@ -14,7 +14,7 @@ export default function Home() {
       <article className="w-full font-medium">
         <div className="text-zinc-700 dark:text-zinc-300">
           <p className="hover:text-black dark:hover:text-white">
-            Hi, I'm 24 years old, currently living in Brazil.
+            Hi, I'm Maicon, 24 years old.
           </p>
           <p className="hover:text-black dark:hover:text-white">
             Working at{' '}

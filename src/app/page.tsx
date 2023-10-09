@@ -1,20 +1,23 @@
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import Link from 'next/link'
+import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-start justify-between p-10 lg:pt-22 lg:mx-[22%] z-50">
+    <main className="flex flex-col items-start justify-between p-14 lg:pt-22 lg:mx-[16%] lg:my-10 z-50 bg-zinc-100 dark:bg-zinc-900 shadow-lg rounded-md">
       <div className="w-full">
-        <h1 className="text-4xl text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white font-[800]">
+        <h1 className="text-5xl text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white font-[800]">
           Maicon Lourenço
         </h1>
-        <h2 className="text-xl font-semibold">Mid Full Stack Developer</h2>
+        <h2 className="text-2xl text-zinc-500 font-semibold">
+          Full Stack Developer
+        </h2>
         <br />
       </div>
-      <article className="w-full font-medium">
-        <div className="text-zinc-700 dark:text-zinc-300">
+      <article className="w-full font-light text-lg">
+        <div className="text-zinc-600 dark:text-zinc-300">
           <p className="hover:text-black dark:hover:text-white">
-            Hi, I'm Maicon, 24 years old.
+            I'm 24 yo, with 4 year of experience in web development.
           </p>
           <p className="hover:text-black dark:hover:text-white">
             Working at{' '}
@@ -24,7 +27,7 @@ export default function Home() {
               target="_blank"
               rel="noopener"
             >
-              <b>Webhelp</b>
+              <b className="font-bold">Webhelp</b>
             </a>
           </p>
           <p>
@@ -35,27 +38,40 @@ export default function Home() {
           <p className="hover:text-black dark:hover:text-white">
             Currently I'm working mainly with web technologies, internal
             systems, and artificial intelligence mechanisms, with the following
-            stacks: PHP, Javascript, NodeJS, Python.
+            stacks:{' '}
+            <b className="font-bold">PHP, Javascript, NodeJS, Python, Java</b>
           </p>
           <p className="hover:text-black dark:hover:text-white">
             I have experience with these technologies:{' '}
-            <u>
+            <b className="font-bold">
               Git, HTML5, CSS3, Laravel, TypeScript, NestJS, ReactJS, NextJS,
               Flask, Django, MySQL, PostgreSQL, Redis, RabbitMQ, Docker.
-            </u>
+            </b>
           </p>
           <br />
           <p className="hover:text-black dark:hover:text-white">
-            Outside of programming, I like to build computers and servers, do
-            some automation, and build robots. I also have a great admiration
-            for the marine life, and I like to do some deep diving. One of my
-            dreams is to visit the Great Barrier Reef in Australia, one of the
-            most beautiful places on earth.
+            Outside of programming, I like to build computers and game servers,
+            do some automation, and build robots. I also have a great admiration
+            for the nature and especially the marine life, and I like to do some
+            deep diving.
+          </p>
+          <p className="hover:text-black dark:hover:text-white">
+            Ah, I also love music, my favorites styles are: Rock, Pop,
+            Electronic, Classic and Post-punk.
+          </p>
+
+          <p className="mt-1 hover:text-black dark:hover:text-white">
+            Check more about me{' '}
+            <Link href="/about">
+              <u className="font-bold">here.</u>
+            </Link>
           </p>
           <br />
-          <p>Find me on</p>
-          <p className="flex gap-4 font-semibold text-black dark:text-white flex-wrap">
-            <span className="flex items-center gap-1 hover:underline hover:text-indigo-500">
+          <p>
+            <b className="font-bold">Find me on</b>
+          </p>
+          <p className="flex gap-4 font-bold text-black dark:text-white flex-wrap mt-2">
+            <span className="flex items-center gap-1 hover:underline hover:text-indigo-500 cursor-pointer">
               <MdEmail /> maiconloure@gmail.com
             </span>
             <a
@@ -75,6 +91,16 @@ export default function Home() {
             >
               <BsLinkedin />
               LinkedIn
+            </a>
+
+            <a
+              className="flex items-center gap-1 hover:underline hover:text-indigo-500"
+              href="https://twitter.com/maiconloure"
+              target="_blank"
+              rel="noopener"
+            >
+              <BsTwitter />
+              Twitter
             </a>
           </p>
         </div>

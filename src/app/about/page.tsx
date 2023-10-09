@@ -11,20 +11,20 @@ import {
 } from 'react-icons/bi'
 
 export default async function About() {
-  const aboutPage = await getPage()
+  const { title, content } = await getPage()
 
   return (
     <main className="flex flex-col items-center justify-between p-8 lg:pt-10 lg:mx-[12%] z-50">
-      <article className="flex gap-10 bg-zinc-100 dark:bg-zinc-950 py-8 px-20 bg-opacity-90 rounded-md shadow-xl">
+      <article className="flex flex-col lg:flex-row gap-10 bg-zinc-50 dark:bg-zinc-950 py-8 px-20 bg-opacity-90 rounded-md shadow-xl">
         <div className="flex flex-col min-w-[180px]">
           <Image
-            className="rounded-full border-solid border-2 border-zinc-600"
-            src="/profile.jpg"
-            width={180}
-            height={180}
+            className="rounded-full border-solid border-2 border-zinc-600 w-20 h-20 lg:w-40 lg:h-40"
+            src="/profile.svg"
+            width={200}
+            height={210}
             alt="profile image"
           />
-          <h1 className="text-xl font-bold mt-2">Maicon Lourenço</h1>
+          <h1 className="text-xl font-bold  mt-2">Maicon Lourenço</h1>
           <h2 className="text-base font-semibold text-zinc-400">
             Full Stack Developer
           </h2>
@@ -42,7 +42,7 @@ export default async function About() {
           </p>
         </div>
         <div>
-          <h1 className="text-3xl font-bold">About</h1>
+          <h1 className="text-3xl font-bold">{title}</h1>
           <Markdown
             components={{
               h2: ({ node, ...props }) => (
@@ -50,7 +50,7 @@ export default async function About() {
               ),
               p: ({ node, ...props }) => (
                 <p
-                  className="my-4 font-inter text-zinc-800 dark:text-zinc-300"
+                  className="my-4 font-inter text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white"
                   {...props}
                 />
               ),
@@ -59,7 +59,7 @@ export default async function About() {
               ),
             }}
           >
-            {aboutPage}
+            {content}
           </Markdown>
         </div>
       </article>

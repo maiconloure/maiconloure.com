@@ -10,7 +10,6 @@ export async function getPage() {
   const title = response.properties?.title?.title[0].text?.content
   const mdblocks = await n2m.pageToMarkdown(pageId)
   const mdString = n2m.toMarkdownString(mdblocks)
-  console.log(mdString.parent)
 
-  return mdString.parent
+  return { title, content: mdString.parent }
 }

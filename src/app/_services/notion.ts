@@ -4,8 +4,8 @@ import { NotionToMarkdown } from 'notion-to-md'
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 const n2m = new NotionToMarkdown({ notionClient: notion })
 
-export async function getPage() {
-  const pageId = '3854e4711c2b42d3be88d1934276a93e'
+export async function getAboutPage() {
+  const pageId = process.env.NOTION_ABOUT_PAGE_ID || ''
   const response: any = await notion.pages.retrieve({ page_id: pageId })
   const title = response.properties?.title?.title[0].text?.content
   const mdblocks = await n2m.pageToMarkdown(pageId)
@@ -13,3 +13,5 @@ export async function getPage() {
 
   return { title, content: mdString.parent }
 }
+
+// export async function getBlogPosts() {}

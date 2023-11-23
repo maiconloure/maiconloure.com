@@ -1,5 +1,5 @@
 import Markdown from 'react-markdown'
-import { getPage } from '../_services/notion'
+import { getAboutPage } from '../_services/notion'
 import Image from 'next/image'
 import {
   BiLogoCss3,
@@ -11,7 +11,7 @@ import {
 } from 'react-icons/bi'
 
 export default async function About() {
-  const { title, content } = await getPage()
+  const { title, content } = await getAboutPage()
 
   return (
     <main className="flex flex-col items-center justify-between p-8 lg:pt-10 lg:mx-[12%] z-50">

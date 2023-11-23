@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
+import { BsGithub, BsLinkedin, BsTwitter, BsInstagram } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
 
 export default function Home() {
@@ -17,7 +17,8 @@ export default function Home() {
       <article className="w-full font-light text-lg">
         <div className="text-zinc-600 dark:text-zinc-300">
           <p className="hover:text-black dark:hover:text-white">
-            I'm 24 yo, with 4 year of experience in web development.
+            I'm a software developer based in Brazil with 4 year of experience
+            in web development.
           </p>
           <p className="hover:text-black dark:hover:text-white">
             Working at{' '}
@@ -39,7 +40,9 @@ export default function Home() {
             Currently I'm working mainly with web technologies, internal
             systems, and artificial intelligence mechanisms, with the following
             stacks:{' '}
-            <b className="font-bold">PHP, Javascript, NodeJS, Python, Java</b>
+            <b className="font-bold">
+              PHP, Javascript, NodeJS, Python and Java
+            </b>
           </p>
           <p className="hover:text-black dark:hover:text-white">
             I have experience with these technologies:{' '}
@@ -101,6 +104,15 @@ export default function Home() {
             >
               <BsTwitter />
               Twitter
+            </a>
+            <a
+              className="flex items-center gap-1 hover:underline hover:text-indigo-500"
+              href="https://www.instagram.com/maiconlloure/"
+              target="_blank"
+              rel="noopener"
+            >
+              <BsInstagram />
+              Instagram
             </a>
           </p>
         </div>

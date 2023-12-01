@@ -6,6 +6,7 @@ import { Providers } from './providers'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Switch } from '@/components/Switch'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const space = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' })
@@ -92,6 +93,7 @@ export default function RootLayout({
             <rect x="0" y="0" width="100%" height="100%" fill="url(#puzzle)" />
           </svg>
         </div>
+        <Analytics />
       </body>
     </html>
   )

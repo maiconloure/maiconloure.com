@@ -19,7 +19,7 @@ export default async function About() {
         <div className="flex flex-col min-w-[180px]">
           <Image
             className="rounded-full border-solid border-2 border-zinc-600 w-20 h-20 lg:w-40 lg:h-40"
-            src="/profile.jpg"
+            src="/portrait.png"
             width={200}
             height={220}
             alt="profile image"
@@ -50,12 +50,21 @@ export default async function About() {
               ),
               p: ({ node, ...props }) => (
                 <p
-                  className="my-4 font-inter text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white"
+                  className="my-4 font-inter text-zinc-700 dark:text-zinc-500 hover:text-black dark:hover:text-white"
                   {...props}
                 />
               ),
               strong: ({ node, ...props }) => (
-                <strong className="text-black dark:text-white" {...props} />
+                <strong
+                  className="text-zinc-700 dark:text-zinc-400"
+                  {...props}
+                />
+              ),
+              li: ({ node, ...props }) => (
+                <li
+                  className="my-4 font-inter text-zinc-700 dark:text-zinc-500 hover:text-black dark:hover:text-white"
+                  {...props}
+                />
               ),
             }}
           >

@@ -19,7 +19,7 @@ export default async function About() {
         <div className="flex flex-col min-w-[180px]">
           <Image
             className="rounded-full border-solid border-2 border-zinc-600 w-20 h-20 lg:w-40 lg:h-40"
-            src="/portrait.png"
+            src="/portrait.jpg"
             width={200}
             height={220}
             alt="profile image"

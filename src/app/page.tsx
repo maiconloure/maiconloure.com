@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BsGithub, BsLinkedin, BsTwitter, BsInstagram } from 'react-icons/bs'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
 
 export default function Home() {

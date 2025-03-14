@@ -41,7 +41,7 @@ export default function RootLayout({
             <Link href="/">
               <Image
                 className="rounded-full w-10 h-10 lg:w-16 lg:h-16 m-2"
-                src="/knight.png"
+                src="/profile.jpg"
                 width={45}
                 height={45}
                 alt="profile icon"

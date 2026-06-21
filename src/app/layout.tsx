@@ -3,7 +3,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Rubik, Kanit, Work_Sans, Space_Grotesk } from 'next/font/google'
 import { Providers } from './providers'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Switch } from '@/components/Switch'
 import { Analytics } from '@vercel/analytics/react'
@@ -38,14 +37,8 @@ export default function RootLayout({
       >
         <Providers>
           <header className="w-auto flex items-center justify-between p-2 font-sans">
-            <Link href="/">
-              <Image
-                className="rounded-full w-10 h-10 lg:w-16 lg:h-16 m-2"
-                src="/profile.jpg"
-                width={45}
-                height={45}
-                alt="profile icon"
-              />
+            <Link href="/" className="font-bold text-lg text-zinc-800 dark:text-zinc-200 m-2">
+              ML
             </Link>
             <nav className="flex gap-4 lg:text-xl text-zinc-800 dark:text-zinc-300 font-bold lg:mr-8">
               <Link

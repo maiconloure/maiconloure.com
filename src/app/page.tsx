@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { MdEmail } from 'react-icons/md'
 
 export default function Home() {
   return (
@@ -14,7 +12,7 @@ export default function Home() {
       <br />
       <article className="w-full font-light text-lg">
         <p className="hover:text-black dark:hover:text-white">
-          I'm a software developer based in Brazil with 4 year of experience in
+          I&apos;m a software developer based in Brazil with 4 year of experience in
           web development.
         </p>
         <p className="hover:text-black dark:hover:text-white">
@@ -29,12 +27,12 @@ export default function Home() {
           </a>
         </p>
         <p>
-          I'm eternally curious about how everything works and how to solve the
+          I&apos;m eternally curious about how everything works and how to solve the
           most challenging problems to help the world.
         </p>
         <br />
         <p className="hover:text-black dark:hover:text-white">
-          Currently I'm working mainly with web technologies, internal systems,
+          Currently I&apos;m working mainly with web technologies, internal systems,
           and artificial intelligence mechanisms, with the following stacks:{' '}
           <b className="font-bold">PHP, Javascript, NodeJS, Python and Java</b>
         </p>
@@ -68,47 +66,28 @@ export default function Home() {
           <b className="font-bold">Find me on</b>
         </p>
         <p className="flex gap-4 font-bold text-black dark:text-white flex-wrap mt-2">
-          <span className="flex items-center gap-1 hover:underline hover:text-indigo-500 cursor-pointer">
-            <MdEmail />
-            <a href="mailto:maiconloure@gmail.com">maiconloure@gmail.com</a>
-          </span>
           <a
-            className="flex items-center gap-1 hover:underline hover:text-indigo-500"
+            className="hover:underline hover:text-indigo-500"
+            href="mailto:maiconloure@gmail.com"
+          >
+            maiconloure@gmail.com
+          </a>
+          <a
+            className="hover:underline hover:text-indigo-500"
             href="https://github.com/maiconloure"
             target="_blank"
             rel="noopener"
           >
-            <BsGithub />
             GitHub
           </a>
           <a
-            className="flex items-center gap-1 hover:underline hover:text-indigo-500"
+            className="hover:underline hover:text-indigo-500"
             href="https://www.linkedin.com/in/maiconlourenco/"
             target="_blank"
             rel="noopener"
           >
-            <BsLinkedin />
             LinkedIn
           </a>
-
-          {/* <a
-            className="flex items-center gap-1 hover:underline hover:text-indigo-500"
-            href="https://twitter.com/maiconloure"
-            target="_blank"
-            rel="noopener"
-          >
-            <BsTwitter />
-            Twitter
-          </a> */}
-          {/* <a
-            className="flex items-center gap-1 hover:underline hover:text-indigo-500"
-            href="https://www.instagram.com/maiconlloure/"
-            target="_blank"
-            rel="noopener"
-          >
-            <BsInstagram />
-            Instagram
-          </a> */}
         </p>
       </article>
     </main>

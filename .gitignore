@@ -10,6 +10,12 @@
 /.output/
 /.vinxi/
 
+# next.js (legacy, safe to ignore)
+/.next/
+
+# cloudflare pages build output
+/dist/
+
 # production
 /build
 

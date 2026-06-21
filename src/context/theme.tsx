@@ -1,5 +1,4 @@
 import { createContext, createEffect, createSignal, useContext, ParentComponent } from 'solid-js'
-import { isServer } from 'solid-js/web'
 
 type Theme = 'light' | 'dark'
 
@@ -11,17 +10,14 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue>()
 
 export const ThemeProvider: ParentComponent = (props) => {
-  const initial: Theme =
-    !isServer && localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+  const initial: Theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
 
   const [theme, setTheme] = createSignal<Theme>(initial)
 
   createEffect(() => {
     const t = theme()
-    if (!isServer) {
-      localStorage.setItem('theme', t)
-      document.documentElement.classList.toggle('dark', t === 'dark')
-    }
+    localStorage.setItem('theme', t)
+    document.documentElement.classList.toggle('dark', t === 'dark')
   })
 
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))

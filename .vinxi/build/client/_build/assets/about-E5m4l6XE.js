@@ -1,0 +1,1 @@
+import{i as t,t as e}from"./web-FS-orN8F.js";var l=e('<main class="flex flex-col items-center justify-center p-8 lg:pt-10 lg:mx-[12%] z-50"><p class="text-zinc-500 dark:text-zinc-400 text-lg">Coming soon.');function a(){return t(l)}export{a as default};

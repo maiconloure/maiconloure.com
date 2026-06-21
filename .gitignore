@@ -6,10 +6,6 @@
 # testing
 /coverage
 
-# solidstart / vinxi
-/.output/
-/.vinxi/
-
 # next.js (legacy, safe to ignore)
 /.next/
 

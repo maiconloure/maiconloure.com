@@ -17,5 +17,5 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".output", ".vinxi"]
+  "exclude": ["node_modules", "dist"]
 }

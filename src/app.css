@@ -36,3 +36,11 @@ body {
 .pattern {
   mask-image: linear-gradient(#000, rgba(0,0,0,0.1));
 }
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-rubik: 'Rubik', sans-serif;
+  --font-work: 'Work Sans', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-kanit: 'Kanit', sans-serif;
+}

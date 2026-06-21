@@ -19,14 +19,8 @@ export default function App() {
       root={(props) => (
         <ThemeProvider>
           <header class="w-auto flex items-center justify-between p-2 font-sans">
-            <A href="/">
-              <img
-                class="rounded-full w-10 h-10 lg:w-16 lg:h-16 m-2"
-                src="/profile.jpg"
-                width={45}
-                height={45}
-                alt="profile icon"
-              />
+            <A href="/" class="font-bold text-lg text-zinc-800 dark:text-zinc-200 m-2">
+              ML
             </A>
             <nav class="flex gap-4 lg:text-xl text-zinc-800 dark:text-zinc-300 font-bold lg:mr-8">
               <A class="hover:text-black hover:dark:text-white" href="/about">

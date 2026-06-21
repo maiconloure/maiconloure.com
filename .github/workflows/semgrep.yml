@@ -1,0 +1,97 @@
+name: Semgrep SAST
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly, Monday 06:00 UTC (mirrors the Trivy scan)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: semgrep-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Pinned by digest (the container equivalent of an action SHA pin). # 1.166.0
+  SEMGREP_IMAGE: semgrep/semgrep@sha256:c180f0c93a17b420c0af5006214a29d3c747c5459c732b740191adf657dd0068
+  SEMGREP_CONFIG: "--config p/javascript --config p/typescript --config p/security-audit --config p/secrets"
+
+jobs:
+  semgrep:
+    name: Static analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+
+      # Full report, all severities. Never fails here (--metrics=off keeps code off Semgrep's cloud).
+      - name: Semgrep scan (report)
+        run: |
+          docker run --rm -v "$PWD":/src -w /src "$SEMGREP_IMAGE" \
+            semgrep scan $SEMGREP_CONFIG --metrics=off --text --output semgrep-report.txt || true
+
+      - name: Add report to job summary
+        if: always()
+        run: |
+          {
+            echo "## Semgrep SAST"
+            echo ""
+            echo '```'
+            if [ -s semgrep-report.txt ]; then
+              cat semgrep-report.txt
+            else
+              echo "No findings reported."
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: semgrep-report
+          path: semgrep-report.txt
+          retention-days: 30
+
+      # Sticky PR comment via gh CLI (no third-party action, free plan friendly).
+      - name: Post/update PR comment
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          BODY_FILE="$(mktemp)"
+
+          {
+            echo "## 🔎 Semgrep SAST"
+            echo ""
+            echo "Rules: \`p/javascript p/typescript p/security-audit p/secrets\` — full report attached as the **semgrep-report** artifact."
+            echo ""
+            echo '```'
+          } > "$BODY_FILE"
+
+          # GitHub comment limit is ~65 KB; keep well under it and point to the artifact if truncated.
+          MAX_BYTES=50000
+          if [ ! -s semgrep-report.txt ]; then
+            echo "No findings reported." >> "$BODY_FILE"
+          elif [ "$(wc -c < semgrep-report.txt)" -gt "$MAX_BYTES" ]; then
+            head -c "$MAX_BYTES" semgrep-report.txt >> "$BODY_FILE"
+            printf '\n... report truncated — see the full semgrep-report artifact for this run.\n' >> "$BODY_FILE"
+          else
+            cat semgrep-report.txt >> "$BODY_FILE"
+          fi
+          echo '```' >> "$BODY_FILE"
+
+          # Sticky comment: edit the bot's previous comment, or create one on first run.
+          gh pr comment "$PR_NUMBER" --edit-last --create-if-none --body-file "$BODY_FILE"
+
+      # Gate: fail the build on ERROR-severity findings. Must be the last step.
+      - name: Semgrep scan (gate)
+        run: |
+          docker run --rm -v "$PWD":/src -w /src "$SEMGREP_IMAGE" \
+            semgrep scan $SEMGREP_CONFIG --metrics=off --severity ERROR --error

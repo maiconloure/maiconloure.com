@@ -28,6 +28,6 @@
     "tailwindcss": "latest",
     "typescript": "latest",
     "vite-plugin-solid": "^2.10.0",
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.103.0"
   }
 }

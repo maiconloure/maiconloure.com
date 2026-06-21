@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# vinxi build cache (legacy, safe to ignore)
+/.vinxi/
+
 # next.js (legacy, safe to ignore)
 /.next/
 

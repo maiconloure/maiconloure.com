@@ -1,1 +1,0 @@
-import{ssr as t,ssrHydrationKey as e}from"solid-js/web";var n=["<main",' class="flex flex-col items-center justify-center p-8 lg:pt-10 lg:mx-[12%] z-50"><p class="text-zinc-500 dark:text-zinc-400 text-lg">Coming soon.</p></main>'];function s(){return t(n,e())}export{s as default};

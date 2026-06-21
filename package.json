@@ -2,30 +2,32 @@
   "name": "maiconloure",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.0.2",
-    "next": "latest",
-    "next-themes": "^0.2.1",
-    "react": "latest",
-    "react-dom": "latest"
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/kanit": "^5.0.0",
+    "@fontsource/rubik": "^5.0.0",
+    "@fontsource/space-grotesk": "^5.0.0",
+    "@fontsource/work-sans": "^5.0.0",
+    "@solidjs/router": "^0.15.0",
+    "@solidjs/start": "^1.0.0",
+    "solid-js": "^1.9.0",
+    "vinxi": "^0.5.0"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.1.0",
     "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "vite-plugin-solid": "^2.10.0",
+    "wrangler": "^3.0.0"
   }
 }

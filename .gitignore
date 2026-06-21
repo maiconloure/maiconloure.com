@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -8,9 +6,14 @@
 # testing
 /coverage
 
-# next.js
+# vinxi build cache (legacy, safe to ignore)
+/.vinxi/
+
+# next.js (legacy, safe to ignore)
 /.next/
-/out/
+
+# cloudflare pages build output
+/dist/
 
 # production
 /build
@@ -26,12 +29,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
-# vercel
-.vercel
+.env
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
-
-.env

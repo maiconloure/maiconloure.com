@@ -1,45 +1,36 @@
-@import "tailwindcss";
-@config "../tailwind.config.ts";
-
-@keyframes static {
-  0% { transform: translateX(-1000px); }
-  33% { transform: translateY(-1000px); }
-  66% { transform: translateX(1000px); }
-  100% { transform: translateY(1000px); }
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: #343541;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #343541;
-  border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+html, body, #app {
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.pattern {
-  mask-image: linear-gradient(#000, rgba(0,0,0,0.1));
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-:root {
-  --font-inter: 'Inter', sans-serif;
-  --font-rubik: 'Rubik', sans-serif;
-  --font-work: 'Work Sans', sans-serif;
-  --font-space: 'Space Grotesk', sans-serif;
-  --font-kanit: 'Kanit', sans-serif;
+h1 {
+  font-family: 'JetBrainsMono', monospace;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #888;
 }

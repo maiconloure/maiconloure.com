@@ -15,24 +15,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/inter": "5.2.8",
-    "@fontsource/kanit": "5.2.8",
-    "@fontsource/rubik": "5.2.8",
-    "@fontsource/space-grotesk": "5.2.10",
-    "@fontsource/work-sans": "5.2.8",
-    "@solidjs/router": "0.15.4",
-    "solid-js": "1.9.13"
+    "solid-js": "^1.9.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.3.1",
-    "@types/node": "26.0.0",
-    "autoprefixer": "10.5.0",
-    "eslint": "10.5.0",
-    "postcss": "8.5.15",
-    "tailwindcss": "4.3.1",
-    "typescript": "6.0.3",
-    "vite": "8.0.16",
-    "vite-plugin-solid": "2.11.12",
-    "wrangler": "4.103.0"
+    "@types/node": "latest",
+    "eslint": "latest",
+    "typescript": "latest",
+    "vite": "^8.0.16",
+    "vite-plugin-solid": "^2.10.0",
+    "wrangler": "^4.103.0"
   }
 }

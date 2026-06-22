@@ -15,24 +15,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.0",
-    "@fontsource/kanit": "^5.0.0",
-    "@fontsource/rubik": "^5.0.0",
-    "@fontsource/space-grotesk": "^5.0.0",
-    "@fontsource/work-sans": "^5.0.0",
-    "@solidjs/router": "^0.15.0",
-    "solid-js": "^1.9.0"
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/kanit": "5.2.8",
+    "@fontsource/rubik": "5.2.8",
+    "@fontsource/space-grotesk": "5.2.10",
+    "@fontsource/work-sans": "5.2.8",
+    "@solidjs/router": "0.15.4",
+    "solid-js": "1.9.13"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.1",
-    "@types/node": "latest",
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest",
-    "vite": "^8.0.16",
-    "vite-plugin-solid": "^2.10.0",
-    "wrangler": "^4.103.0"
+    "@tailwindcss/postcss": "4.3.1",
+    "@types/node": "26.0.0",
+    "autoprefixer": "10.5.0",
+    "eslint": "10.5.0",
+    "postcss": "8.5.15",
+    "tailwindcss": "4.3.1",
+    "typescript": "6.0.3",
+    "vite": "8.0.16",
+    "vite-plugin-solid": "2.11.12",
+    "wrangler": "4.103.0"
   }
 }

@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 @font-face {
-  font-family: 'JetBrainsMono';
-  src: url('/JetBrainsMono-Regular.woff2') format('woff2');
-  font-weight: normal;
+  font-family: "MonaSansExpanded";
+  src: url("/MonaSansExpanded-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: block;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
   width: 100%;
 }
@@ -24,13 +31,41 @@ body {
 }
 
 #app {
+  width: 100%;
+  min-height: 100%;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 h1 {
-  font-family: 'JetBrainsMono', monospace;
+  font-family: 'Michroma', sans-serif;
   font-size: clamp(2rem, 5vw, 4rem);
-  color: #888;
+  color: #FFF;
+}
+
+p {
+  font-family: 'Mona Sans Expanded', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #504F4F;
+  margin-top: 1rem;
+}
+
+.footer-phrase {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Mona Sans Expanded', sans-serif;
+  font-size: 1rem;
+  color: #504F4F;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }

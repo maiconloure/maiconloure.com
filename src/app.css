@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-
-@font-face {
-  font-family: "MonaSansExpanded";
-  src: url("/MonaSansExpanded-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Public+Sans:wght@500&display=swap');
 
 *,
 *::before,
@@ -47,14 +39,15 @@ body {
 
 h1 {
   font-family: 'Michroma', sans-serif;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 4vw, 3rem);
   color: #FFF;
 }
 
 p {
-  font-family: 'Mona Sans Expanded', sans-serif;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 500;
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #504F4F;
+  color: #6B6A6A;
   margin-top: 1rem;
 }
 
@@ -63,9 +56,10 @@ p {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Mona Sans Expanded', sans-serif;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 500;
   font-size: 1rem;
-  color: #504F4F;
+  color: #6B6A6A;
   letter-spacing: 0.04em;
   white-space: nowrap;
 }

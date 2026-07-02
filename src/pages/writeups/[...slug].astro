@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const entries = await getCollection('writeups', ({ data }) => !data.draft)
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article class="container page">
+    <a class="back" href="/writeups">&larr; writeups</a>
+    <h1>{entry.data.title}</h1>
+    <div class="meta">
+      <time datetime={entry.data.pubDate.toISOString()}>
+        {
+          entry.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })
+        }
+      </time>
+      {entry.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: 3rem 5rem;
+    max-width: 40rem;
+  }
+
+  .back {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+
+  h1 {
+    margin-top: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .meta {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+  }
+
+  .tag {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .prose {
+    margin-top: 2rem;
+    color: var(--fg);
+  }
+
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    color: var(--fg-muted);
+  }
+
+  .prose :global(ol),
+  .prose :global(ul) {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--fg-muted);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(code) {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.9em;
+  }
+
+  .prose :global(strong) {
+    color: var(--fg);
+  }
+</style>

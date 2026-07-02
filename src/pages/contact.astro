@@ -1,0 +1,86 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+const links = [
+  { label: 'GitHub', href: 'https://github.com/maiconloure', handle: 'github.com/maiconloure' },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/maiconlourenco/',
+    handle: 'linkedin.com/in/maiconlourenco',
+  },
+  { label: 'Email', href: 'mailto:maiconloure@gmail.com', handle: 'maiconloure@gmail.com' },
+]
+---
+
+<BaseLayout title="Contact" description="Get in touch with Maicon Lourenço.">
+  <section class="container page">
+    <p class="prompt eyebrow">contact --list</p>
+    <h1>Contact</h1>
+    <p class="intro">Best ways to reach me — no forms, just links.</p>
+
+    <ul class="link-list">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+              <span class="label">{link.label}</span>
+              <span class="handle">{link.handle}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: 4rem 5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    margin-top: 1.5rem;
+    color: var(--fg-muted);
+  }
+
+  .link-list {
+    margin-top: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 28rem;
+  }
+
+  .link-list li {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .link-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    color: var(--fg);
+  }
+
+  .link-list a:hover {
+    text-decoration: none;
+    color: var(--accent);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+  }
+
+  .handle {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+</style>

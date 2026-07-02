@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Home" description="Maicon Lourenço — Software Developer focused on secure, well-built systems.">
+  <section class="hero container">
+    <p class="prompt eyebrow">whoami</p>
+    <h1>Maicon Lourenço</h1>
+    <p class="tagline">Software Developer — building secure, dependable systems.</p>
+    <p class="intro">
+      I write software with an eye on how it can fail — from input handling to
+      infrastructure. This site collects what I learn along the way, in
+      <a href="/writeups">writeups</a>.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/writeups">Read writeups →</a>
+      <a class="btn" href="/contact">Get in touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: 6rem 4rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .tagline {
+    margin-top: 0.75rem;
+    color: var(--fg-muted);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+  }
+
+  .intro {
+    margin-top: 1.5rem;
+    max-width: 34rem;
+    color: var(--fg-muted);
+  }
+
+  .cta-row {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.65rem 1.1rem;
+    color: var(--fg);
+  }
+
+  .btn:hover {
+    text-decoration: none;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-primary {
+    background-color: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+</style>

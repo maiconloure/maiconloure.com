@@ -1,0 +1,17 @@
+---
+import MobileNav from './MobileNav.tsx'
+
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/about', label: 'about' },
+  { href: '/writeups', label: 'writeups' },
+  { href: '/contact', label: 'contact' },
+]
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">maicon<span class="cursor">@</span>sec</a>
+    <MobileNav client:load links={links} currentPath={Astro.url.pathname} />
+  </div>
+</header>

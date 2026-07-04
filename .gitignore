@@ -15,6 +15,9 @@
 # cloudflare pages build output
 /dist/
 
+# astro generated types
+/.astro/
+
 # production
 /build
 

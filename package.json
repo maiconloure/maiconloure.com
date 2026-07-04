@@ -9,20 +9,21 @@
     "node": "24"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/solid-js": "^7.0.0",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "astro": "^7.0.5",
     "solid-js": "^1.9.0"
   },
   "devDependencies": {
     "@types/node": "latest",
     "eslint": "latest",
     "typescript": "latest",
-    "vite": "^8.0.16",
-    "vite-plugin-solid": "^2.10.0",
     "wrangler": "^4.103.0"
   }
 }

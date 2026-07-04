@@ -46,6 +46,7 @@ jobs:
           format: table
           output: trivy-license.txt
           exit-code: "0"
+          trivyignores: .trivyignore.yaml
 
       - name: Combine reports
         if: always()
@@ -120,3 +121,4 @@ jobs:
           severity: HIGH,CRITICAL
           format: table
           exit-code: "1"
+          trivyignores: .trivyignore.yaml

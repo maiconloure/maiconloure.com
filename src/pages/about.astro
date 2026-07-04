@@ -1,0 +1,104 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+const skills = [
+  {
+    category: 'Languages',
+    items: ['TypeScript', 'JavaScript', 'Python'],
+  },
+  {
+    category: 'Frameworks',
+    items: ['Astro', 'SolidJS', 'Node.js'],
+  },
+  {
+    category: 'Security & CI',
+    items: ['Trivy', 'Semgrep', 'CSP / security headers', 'Threat modeling basics'],
+  },
+  {
+    category: 'Infra',
+    items: ['Cloudflare Pages', 'GitHub Actions', 'Git'],
+  },
+]
+---
+
+<BaseLayout title="About" description="About Maicon Lourenço.">
+  <section class="container page">
+    <p class="prompt eyebrow">cat about.md</p>
+    <h1>About</h1>
+
+    <!-- Placeholder bio — replace with your own background, focus areas, and goals. -->
+    <p class="bio">
+      I'm a software developer who cares about building things that hold up under
+      real-world conditions — including adversarial ones. I like understanding systems
+      well enough to know how they break, and using that to write more careful code.
+      This page is a placeholder — swap in your real background, focus areas, and
+      current interests here.
+    </p>
+
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      {
+        skills.map((group) => (
+          <div class="skill-group">
+            <h3>{group.category}</h3>
+            <ul>
+              {group.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-block: 4rem 5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .bio {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    color: var(--fg-muted);
+  }
+
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+  }
+
+  .skills-grid {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+  }
+
+  .skill-group h3 {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+</style>

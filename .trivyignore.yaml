@@ -1,0 +1,17 @@
+licenses:
+  - id: LGPL-3.0-or-later
+    paths:
+      - "package-lock.json"
+    statement: &statement >-
+      Flagged only on @img/sharp-* native binaries, an optional dependency
+      pulled in transitively by astro (built-in image optimization) and by
+      wrangler's local Workers runtime (miniflare). Build/dev-time tooling
+      only — never bundled into the deployed site.
+  - id: "Apache-2.0 AND LGPL-3.0-or-later"
+    paths:
+      - "package-lock.json"
+    statement: *statement
+  - id: "Apache-2.0 AND LGPL-3.0-or-later AND MIT"
+    paths:
+      - "package-lock.json"
+    statement: *statement

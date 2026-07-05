@@ -33,8 +33,14 @@ body {
 
 body {
   background-color: var(--bg);
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cpath d='M0 0L240 240M240 0L0 240' stroke='%23555555' stroke-opacity='0.4' stroke-width='1'/%3E%3C/svg%3E");
+  background-size:
+    120px 120px,
+    120px 120px,
+    240px 240px;
   color: var(--fg);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -126,6 +132,7 @@ pre {
   font-size: 1rem;
   color: var(--fg);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .logo:hover {
@@ -177,6 +184,7 @@ pre {
   list-style: none;
   font-family: var(--font-mono);
   font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
 .nav-links a {
@@ -240,12 +248,12 @@ pre {
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
 }
 
 .footer-links a {
+  display: flex;
   color: var(--fg-muted);
   text-decoration: none;
 }
@@ -254,10 +262,9 @@ pre {
   color: var(--fg);
 }
 
-.footer-quote {
-  color: var(--fg-muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+.footer-links svg {
+  width: 20px;
+  height: 20px;
 }
 
 main {

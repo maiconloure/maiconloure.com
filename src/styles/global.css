@@ -1,16 +1,16 @@
 @import '@fontsource-variable/jetbrains-mono';
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/mona-sans';
 
 :root {
-  --bg: #0a0e14;
-  --bg-elevated: #0f1620;
-  --border: #1c2733;
-  --fg: #e6edf3;
-  --fg-muted: #7d8590;
-  --accent: #22d3ee;
-  --accent-dim: rgba(34, 211, 238, 0.15);
+  --bg: #000000;
+  --bg-elevated: #000000;
+  --border: #2e2e2e;
+  --fg: #ffffff;
+  --fg-muted: #999999;
+  --accent: #ffffff;
+  --accent-dim: rgba(255, 255, 255, 0.15);
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
-  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Mona Sans Variable', system-ui, sans-serif;
   --content-width: 42rem;
 }
 
@@ -52,16 +52,19 @@ h3 {
   font-weight: 600;
   color: var(--fg);
   line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--fg-muted);
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-decoration-color: var(--fg);
 }
 
 code,
@@ -83,7 +86,7 @@ pre {
 
 .prompt::before {
   content: '$ ';
-  color: var(--accent);
+  color: var(--fg-muted);
 }
 
 .sr-only {
@@ -105,7 +108,7 @@ pre {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--border);
-  background-color: rgba(10, 14, 20, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
 }
 
@@ -122,15 +125,15 @@ pre {
   font-weight: 600;
   font-size: 1rem;
   color: var(--fg);
+  text-decoration: none;
 }
 
 .logo:hover {
-  text-decoration: none;
-  color: var(--accent);
+  text-decoration: underline;
 }
 
 .logo .cursor {
-  color: var(--accent);
+  color: var(--fg-muted);
 }
 
 .nav-toggle {
@@ -178,11 +181,12 @@ pre {
 
 .nav-links a {
   color: var(--fg-muted);
+  text-decoration: none;
 }
 
 .nav-links a:hover,
 .nav-links a[aria-current='page'] {
-  color: var(--accent);
+  color: var(--fg);
   text-decoration: none;
 }
 
@@ -243,10 +247,11 @@ pre {
 
 .footer-links a {
   color: var(--fg-muted);
+  text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--fg);
 }
 
 .footer-quote {

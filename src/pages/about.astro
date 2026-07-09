@@ -85,6 +85,7 @@ const skills = [
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 1rem 1.25rem;
+    background-color: #1e1e1e;
   }
 
   .skill-group h3 {
@@ -96,9 +97,18 @@ const skills = [
   .skill-group ul {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     color: var(--fg-muted);
     font-size: 0.9rem;
+  }
+
+  .skill-group li {
+    background-color: #2a2a2a;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.35rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
   }
 </style>

@@ -24,6 +24,10 @@
     "@types/node": "latest",
     "eslint": "latest",
     "typescript": "latest",
-    "wrangler": "^4.103.0"
+    "wrangler": "^4.114.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.18",
+    "svgo": "^4.0.2"
   }
 }
